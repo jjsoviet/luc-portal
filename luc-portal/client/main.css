@@ -13,12 +13,43 @@
   left: 20vw;
 }
 
+.item-card {
+  max-height: 400px;
+  transition: height 0s, max-height 600ms ease;
+  -webkit-transition: height 0s, max-height 600ms ease;
+}
+
+.item-card.toggled{
+  max-height: 999px;
+}
+
 .card-contents {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 25px;
+}
+
+.info-contents {
+  margin-bottom: 25px;
+}
+
+.info-contents.disabled {
+  visibility: hidden;
+  display: none;
+}
+
+.info-contents.enabled {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  visibility: visible;
+}
+
+.info-section {
+  margin: 25px;
 }
 
 .card-section {
@@ -91,33 +122,28 @@
   align-items: center;
 }
 
+.more-button, .download-button {
+  position: absolute !important;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255,255,255) !important;
+}
+
+.download-button {
+  bottom: 20px;
+  margin: 0px 25px !important;
+}
+
+.more-button i {
+  margin: 0px 5px;
+}
+
 
 /*Overrides*/
 .wide-card {
   width: 60vw !important;
   color: rgb(255, 255, 255);
-}
-
-.modal-card {
-  color: white;
-  position: fixed;
-  margin: auto;
-  width: 30%;
-  height: 50%;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.modal-card.transitionIn {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s, opacity 200ms ease;
-  -webkit-transition: visibility 0s, opacity 200ms ease;
-}
-
-.modal-card.transitionOut {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 200ms ease;
-  -webkit-transition: visibility 0s, opacity 200ms ease;
 }

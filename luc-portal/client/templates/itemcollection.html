@@ -3,7 +3,7 @@
     <div class="mdl-grid">
       {{#each curationItems}}
         <div class="mdl-cell mdl-cell--12-col">
-          <div class="mdl-card mdl-shadow--2dp wide-card mdl-color--indigo-700">
+          <div class="mdl-card mdl-shadow--2dp wide-card item-card" style="background:{{color}};" id="{{id}}">
             <div class="card-contents">
               <div class="card-section">
                 <div class="icons-section">
@@ -22,19 +22,38 @@
               </div>
               <div class="card-section">
                 <h3>{{title}}</h3>
-                <p>
-                  {{description}}
-                </p>
-
+                <p>{{shortdesc}}</p>
                 <div class="actions-section">
                   <span id="reqValue" style="display: none;">{{requirements}}</span>
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--orange-800 mdl-color-text--white modal-button" onclick="openModal()">Requirements</button>
+                  <span class="bold">TAGS:</span>
                   {{#each tags}}
                     <span class="mdl-chip">
                         <span class="mdl-chip__text">{{tag}}</span>
                     </span>
                   {{/each}}
+                  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised more-button" onclick="toggleCard({{id}}, this, {{infoId}})">
+                    <i class='material-icons'>keyboard_arrow_down</i>More<i class='material-icons'>keyboard_arrow_down</i>
+                  </button>
                 </div>
+              </div>
+            </div>
+            <div class="info-contents disabled" id="{{infoId}}">
+              <div class="info-section">
+                <h4>DESCRIPTION</h4>
+                <p>{{description}}</p>
+                <h4>REQUIREMENTS</h4>
+                <div class="mdl-grid">
+                  {{#each requirements}}
+                    <div class="mdl-cell mdl-cell--4-col">
+                      <span class="bold">{{reqtitle}}</span><br />
+                      <span>{{reqdesc}}</span>
+                    </div>
+                  {{/each}}
+                </div>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised download-button">
+                  <i class="material-icons">file_download</i>
+                  Download
+                </button>
               </div>
             </div>
           </div>
@@ -43,34 +62,22 @@
     </div>
   </div>
 
-    <div class="mdl-card modal-card mdl-color--grey-900" id="reqModal">
-      <div class="mdl-card__title mdl-color-text--white">
-        <h2 class="mdl-card__title-text">Requirements</h2>
-      </div>
-      <div class="mdl-card__supporting-text mdl-color-text--white req-section" id="reqSection">
-        Test requirement
-      </div>
-      <div class="mdl-button mdl-button--fab mdl-button--mini-fab mdl-color--red-800 mdl-color-text--white close-button" onclick="closeModal()">
-        <div>
-          <i class="material-icons">close</i>
-        </div>
-      </div>
-    </div>
+  <script>
+    function toggleCard(card, btn, infoContents) {
+      card.classList.toggle("toggled");
 
-    <script>
-      var modal = document.getElementById('reqModal');
-      var diff = document.getElementById('difficulty');
-      for (var i = 0; i < document.getElementById('diffValue').innerHTML; i++) {
-        diff.innerHTML += "<i class='material-icons'>star</i>";
-      }
+      var more = "<i class='material-icons'>keyboard_arrow_down</i>More<i class='material-icons'>keyboard_arrow_down</i>";
+      var less = "<i class='material-icons'>keyboard_arrow_up</i>Less<i class='material-icons'>keyboard_arrow_up</i>";
 
-      function openModal() {
-        modal.classList.add('transitionIn');
+      if (btn.innerText == "keyboard_arrow_downMOREkeyboard_arrow_down") {
+        infoContents.classList.remove("disabled");
+        infoContents.classList.add("enabled");
+        btn.innerHTML = less;
+      } else {
+        infoContents.classList.remove("enabled");
+        infoContents.classList.add("disabled");
+        btn.innerHTML = more;
       }
-
-      function closeModal() {
-        modal.classList.remove('transitionIn');
-        modal.classList.add('transitionOut');
-      }
-    </script>
+    }
+  </script>
 </template>
