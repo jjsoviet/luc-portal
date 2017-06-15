@@ -1,0 +1,123 @@
+/*New Elements*/
+.bold {
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 20vw;
+}
+
+.card-contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 0px 25px;
+}
+
+.icons-section {
+  width: 5vw;
+}
+
+.icons-section, .categories-section, .stats-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.categories-section, .icons-section {
+  align-items: center;
+}
+
+.categories-section i:first-child {
+  padding-top: 20px;
+}
+
+.stats-section {
+  align-items: flex-start;
+}
+
+.stats-section span i, .stats-section #time {
+  font-size: 0.8em;
+}
+
+.categories-section i, .stats-section span {
+  margin: 5px 0px;
+}
+
+.categories-section i {
+  font-size: 2em
+}
+
+.actions-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.actions-section button {
+  margin-right: 20px;
+}
+
+.actions-section span {
+  margin: 0px 5px;
+}
+
+.close-button {
+  position: absolute !important;
+  top: 5px;
+  right: 5px;
+}
+
+.close-button div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*Overrides*/
+.wide-card {
+  width: 60vw !important;
+  color: rgb(255, 255, 255);
+}
+
+.modal-card {
+  color: white;
+  position: fixed;
+  margin: auto;
+  width: 30%;
+  height: 50%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-card.transitionIn {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 200ms ease;
+  -webkit-transition: visibility 0s, opacity 200ms ease;
+}
+
+.modal-card.transitionOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 200ms ease;
+  -webkit-transition: visibility 0s, opacity 200ms ease;
+}
