@@ -1,6 +1,66 @@
-/*New Elements*/
+html, body {
+  font-family: 'Heebo', sans-serif !important;
+  font-weight: 300 !important;
+}
+
 .bold {
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.med {
+  font-weight: 400;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.white-hr {
+  background: rgb(255,255,255);
+  display: block;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  margin-left: 0;
+  margin-right: 0;
+  width: 90%;
+  border-style: solid;
+}
+
+.portal-header header {
+  background-image: linear-gradient(to right, rgb(31,30,93), white 40%), url('/img/headerimg2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-blend-mode: multiply;
+  height: 200px !important;
+  padding-top: 70px;
+}
+
+.portal-header .header-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portal-header header img.header-img {
+  height: 160px;
+  width: auto;
+}
+
+.header-title {
+  margin-left: 50px;
+  font-size: 3em;
+  font-weight: 200;
+}
+
+.header-links a {
+  font-weight: 200 !important;
+  font-size: 2em !important;
+}
+
+.portal-content {
+  background: rgb(255,255,255) !important;
 }
 
 .container {
@@ -52,12 +112,30 @@
   margin: 25px;
 }
 
+.info-section h4 {
+  font-size: 2em;
+}
+
+.info-section p, .req-grid span {
+  font-size: 1.1em;
+}
+
 .card-section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
   margin: 0px 25px;
+}
+
+.card-section h3 {
+  font-weight: 300 !important;
+  font-size: 3em;
+}
+
+.card-section p {
+  font-weight: 300;
+  font-size: 1.1em;
 }
 
 .icons-section {
@@ -141,8 +219,6 @@
   margin: 0px 5px;
 }
 
-
-/*Overrides*/
 .wide-card {
   width: 60vw !important;
   color: rgb(255, 255, 255);

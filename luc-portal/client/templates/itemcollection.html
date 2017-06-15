@@ -38,15 +38,16 @@
               </div>
             </div>
             <div class="info-contents disabled" id="{{infoId}}">
+              <hr class="white-hr" />
               <div class="info-section">
                 <h4>DESCRIPTION</h4>
-                <p>{{description}}</p>
+                <p class="light">{{description}}</p>
                 <h4>REQUIREMENTS</h4>
-                <div class="mdl-grid">
+                <div class="mdl-grid req-grid">
                   {{#each requirements}}
                     <div class="mdl-cell mdl-cell--4-col">
                       <span class="bold">{{reqtitle}}</span><br />
-                      <span>{{reqdesc}}</span>
+                      <span class="light">{{reqdesc}}</span>
                     </div>
                   {{/each}}
                 </div>
