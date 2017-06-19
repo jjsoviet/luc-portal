@@ -64,6 +64,23 @@
   </div>
 
   <script>
+    var cards = document.getElementsByClassName("item-card");
+    var delay = 0;
+
+    setTimeout(displayCards, 300);
+
+    function displayCards() {
+      for (var i = 0; i < cards.length; i++) {
+        delay += 160;
+        displayCard(i, delay);
+      }
+    }
+
+    function displayCard(i, delay) {
+      setTimeout(function() { cards[i].classList.add("display"); }, 200 + delay);
+
+    }
+
     function toggleCard(card, btn, infoContents) {
       card.classList.toggle("toggled");
 

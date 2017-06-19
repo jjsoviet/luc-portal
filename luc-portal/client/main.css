@@ -75,8 +75,13 @@ html, body {
 
 .item-card {
   max-height: 400px;
-  transition: height 0s, max-height 600ms ease;
-  -webkit-transition: height 0s, max-height 600ms ease;
+  opacity: 0;
+  transition: opacity 300ms ease, height 0s, max-height 600ms ease;
+  -webkit-transition: opacity 300ms ease, height 0s, max-height 600ms ease;
+}
+
+.item-card.display {
+  opacity: 1;
 }
 
 .item-card.toggled{
