@@ -1,0 +1,35 @@
+<template name="itemgrid">
+  <div class="grid-container">
+    <div class="mdl-grid mdl-grid--no-spacing">
+      {{#each curationItems}}
+        <div class="mdl-cell mdl-cell--3-col">
+          <div class="grid-item" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(40,40,200, 0.8), rgba(0,0,0,0.6));">
+            <div class="item-panel">
+              <div class="panel-headers">
+                <h4 class="panel-title">{{title}}</h4>
+                <span>{{shortdesc}}</span>
+              </div>
+              <div class="panel-details">
+                <span id="diffValue" style="display:none;">{{difficulty}}</span>
+                <span id="difficulty"></span>
+                <span>{{rating}}</span>
+                <span>{{time}}</span>
+              </div>
+              <div class="panel-tags">
+                <span class="tag-title">TAGS:</span>
+                {{#each tags}}
+                  <span class="mdl-chip">
+                    <span class="mdl-chip__text">{{tag}}</span>
+                  </span>
+                {{/each}}
+                <button class="panel-button">
+                  More Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
