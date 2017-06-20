@@ -257,15 +257,13 @@ html, body {
 
 .grid-container {
   position: absolute;
-  width: 100vw;
   top: 0px;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
 .grid-item {
   display: flex;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: lighten;
   width: 100%;
