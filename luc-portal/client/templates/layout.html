@@ -1,4 +1,4 @@
-<template name="layout">
+<template name="applicationLayout">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header portal-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
@@ -18,7 +18,7 @@
     </header>
     <main class="mdl-layout__content portal-content">
       <div class="page-content">
-        {{> dashboard}}
+        {{> Template.dynamic template=main}}
       </div>
     </main>
   </div>

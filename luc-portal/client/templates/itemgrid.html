@@ -1,6 +1,9 @@
 <template name="itemgrid">
   <div class="grid-container">
-    <div class="mdl-grid mdl-grid--no-spacing">
+    <div class="grid-header">
+      <h1>VR Camp Resources</h1>
+    </div>
+    <div class="mdl-grid mdl-grid--no-spacing resource-grid">
       {{#each curationItems}}
         <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
           <div class="grid-item" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(40,40,200, 0.8), rgba(0,0,0,0.6));">
