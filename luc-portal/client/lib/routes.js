@@ -1,3 +1,13 @@
+FlowRouter.route( '/login', {
+  action: function() {
+    console.log( "Login" );
+    BlazeLayout.render('applicationLayout', {
+      main: 'login'
+    })
+  },
+  name: 'login'
+});
+
 FlowRouter.route( '/dashboard', {
   action: function() {
     console.log( "Dashboard" );
@@ -5,7 +15,7 @@ FlowRouter.route( '/dashboard', {
       main: 'dashboard'
     })
   },
-  name: 'camp'
+  name: 'dashboard'
 });
 
 FlowRouter.route( '/camp', {
@@ -16,4 +26,15 @@ FlowRouter.route( '/camp', {
     })
   },
   name: 'camp'
+});
+
+
+FlowRouter.route( '/detail', {
+  action: function() {
+    console.log( "Detail" );
+    BlazeLayout.render('applicationLayout', {
+      main: 'detail'
+    })
+  },
+  name: 'detail'
 });
