@@ -8,6 +8,16 @@ FlowRouter.route( '/login', {
   name: 'login'
 });
 
+FlowRouter.route( '/register', {
+  action: function() {
+    console.log( "Register" );
+    BlazeLayout.render('applicationLayout', {
+      main: 'register'
+    })
+  },
+  name: 'rgister'
+});
+
 FlowRouter.route( '/dashboard', {
   action: function() {
     console.log( "Dashboard" );

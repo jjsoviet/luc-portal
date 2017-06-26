@@ -677,3 +677,8 @@ html, body {
   font-size: 1.6em;
   font-weight: 200 !important;
 }
+
+.login-logo img {
+  width: 200px;
+  height: auto;
+}
