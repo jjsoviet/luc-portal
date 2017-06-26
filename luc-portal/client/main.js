@@ -53,12 +53,13 @@ Template.itemgrid.helpers({
 
 
 Template.detail.helpers({
-  title: "Article 1",
-  category: "Article",
+  title: "UVW Unwrapping",
+  category: "Tutorial",
   rating: "Intermediate",
   date: "June 9, 2017",
-  img:"/img/img5.jpg",
-  description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat",
-  tags: [ { tag: "cool" }, { tag: "lorem" }, { tag: "ipsum" } ],
+  img:"/img/headers/uvw.PNG",
+  description: "We will now texture our assets by using UVW Unwrapping in 3DS Max. With the Unwrap UVW modifier, we can assign the mapping for textures to specific objects and their parts (faces, edges, etc.). For instance, in a human character asset we can assign a face texture to the head, while we assign cloth textures to the body. After successfully unwrapping and assigning textures to our designs, we can then import our models to Unity.",
+  requirements: [ { reqimg: "/img/logos/3dsmax.png", reqtitle: "3DS Max", reqdesc: "Asset Creation, UVW Unwrap" }, { reqimg: "/img/logos/photoshop.jpg", reqtitle: "Adobe Photoshop", reqdesc: "Texture Mapping" }, { reqimg: "/img/logos/unity.png", reqtitle: "Unity Engine", reqdesc: "Asset Import" } ],
+  tags: [ { tag: "uvw" }, { tag: "unwrap" }, { tag: "textures" } ],
   actions: [ { action: "Download" }, { action: "Share" } ]
 });

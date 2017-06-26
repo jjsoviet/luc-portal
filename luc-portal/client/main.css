@@ -1,6 +1,7 @@
 html, body {
   font-family: 'Heebo', sans-serif !important;
   font-weight: 300 !important;
+  overflow: hidden;
 }
 
 .mdl-layout__content.portal-content {
@@ -572,21 +573,7 @@ html, body {
 }
 
 
-.update-grid::-webkit-scrollbar, .mdl-layout__content.portal-content::-webkit-scrollbar,
-.resource-grid::-webkit-scrollbar {
-    width: 5px;
-}
 
-.update-grid::-webkit-scrollbar-track, .mdl-layout__content.portal-content::-webkit-scrollbar-track,
-.resource-grid::-webkit-scrollbar-track {
-    -webkit-box-shadow: none;
-}
-
-.update-grid::-webkit-scrollbar-thumb, .mdl-layout__content.portal-content::-webkit-scrollbar-thumb,
-.resource-grid::-webkit-scrollbar-thumb {
-  background-color: rgb(255,255,255);
-  border: 1px solid rgb(10,2,38);
-}
 
 .dash-image {
   background: url('/img/levelupcamp-logo.png');
@@ -609,15 +596,18 @@ html, body {
 
 .detail-container {
   color: rgb(255,255,255);
+  width: 100%;
+  max-height: 65vh;
+  overflow-y: auto;
 }
 
 .detail-header {
-  width: 100vw;
   height: auto;
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
   padding: 40px;
+  color: rgb(255,255,255);
 }
 
 .detail-titles {
@@ -632,9 +622,6 @@ html, body {
   font-weight: 200;
 }
 
-.detail-info {
-  margin-right: 40px;
-}
 
 .detail-info span {
   font-size: 1.6em;
@@ -653,12 +640,42 @@ html, body {
   margin-right: 10px;
 }
 
-.detail-desc {
+.detail-desc, .detail-actions, .detail-requirements {
+  margin: 0 40px;
+}
+
+.detail-desc h1, .detail-requirements h1 {
+  font-weight: 200;
+}
+
+.detail-desc h4, .detail-requirements .mdl-grid {
   margin: 0 60px;
 }
 
-.detail-actions {
-  margin: 0 40px;
+.detail-requirements, .detail-actions {
+  margin-bottom: 50px;
+}
+
+.requirement-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.requirement-panel img {
+  width: 120px;
+  height: auto;
+}
+
+.requirement-panel h3 {
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.requirement-panel span {
+  font-size: 1.2em;
+  font-weight: 200;
 }
 
 .detail-desc h4 {
@@ -681,4 +698,24 @@ html, body {
 .login-logo img {
   width: 200px;
   height: auto;
+}
+
+
+.update-grid::-webkit-scrollbar, .mdl-layout__content.portal-content::-webkit-scrollbar,
+.resource-grid::-webkit-scrollbar,
+.detail-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.update-grid::-webkit-scrollbar-track, .mdl-layout__content.portal-content::-webkit-scrollbar-track,
+.resource-grid::-webkit-scrollbar-track,
+.detail-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+}
+
+.update-grid::-webkit-scrollbar-thumb, .mdl-layout__content.portal-content::-webkit-scrollbar-thumb,
+.resource-grid::-webkit-scrollbar-thumb,
+.detail-container::-webkit-scrollbar-thumb {
+  background-color: rgb(255,255,255);
+  border: 1px solid rgb(10,2,38);
 }
