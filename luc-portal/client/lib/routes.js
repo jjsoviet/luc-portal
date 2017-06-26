@@ -15,7 +15,7 @@ FlowRouter.route( '/register', {
       main: 'register'
     })
   },
-  name: 'rgister'
+  name: 'register'
 });
 
 FlowRouter.route( '/dashboard', {
@@ -28,9 +28,8 @@ FlowRouter.route( '/dashboard', {
   name: 'dashboard'
 });
 
-FlowRouter.route( '/camp', {
-  action: function() {
-    console.log( "Dashboard" );
+FlowRouter.route( '/camp/:campid', {
+  action: function(params) {
     BlazeLayout.render('applicationLayout', {
       main: 'itemgrid'
     })
@@ -39,9 +38,8 @@ FlowRouter.route( '/camp', {
 });
 
 
-FlowRouter.route( '/detail', {
-  action: function() {
-    console.log( "Detail" );
+FlowRouter.route( '/detail/:itemid', {
+  action: function(params) {
     BlazeLayout.render('applicationLayout', {
       main: 'detail'
     })

@@ -1,10 +1,10 @@
 <template name="itemgrid">
   <div class="grid-container">
     <div class="grid-header">
-      <h1>VR Camp Resources</h1>
+      <h1>Camp Resources</h1>
     </div>
     <div class="mdl-grid mdl-grid--no-spacing resource-grid">
-      {{#each curationItems}}
+      {{#each campitems}}
         <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
           <div class="grid-item" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
             <div class="item-panel">
@@ -29,7 +29,7 @@
                   {{/each}}
                 </div>
                 <button class="panel-button">
-                  <a href="/detail">More Details</a>
+                  <a href="/detail/{{itemid}}">More Details</a>
                 </button>
               </div>
             </div>
