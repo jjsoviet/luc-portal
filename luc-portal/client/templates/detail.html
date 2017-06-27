@@ -6,7 +6,7 @@
         <div class="detail-info">
           <span>{{category}}</span>
           <span>{{rating}}</span>
-          <span>{{date}}</span>
+          <span>{{formatDate date}}</span>
         </div>
       </div>
       <div class="detail-tags">
@@ -27,7 +27,7 @@
         <div class="mdl-grid">
           {{#each requirements}}
             <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone">
-              <div class="requirement-panel">
+              <div class="requirement-panel fade-cell">
                 <img src="{{reqimg}}" />
                 <h3>{{reqtitle}}</h3>
                 <span>{{reqdesc}}</span>

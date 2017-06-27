@@ -572,8 +572,16 @@ html, body {
   max-height: 80vh;
 }
 
+.fade-cell {
+  animation: fadein 400ms;
+  -webkit-animation: fadein 400ms;
+}
 
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 .dash-image {
   background: url('/img/levelupcamp-logo.png');

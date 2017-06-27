@@ -9,6 +9,10 @@ CampItems = new Mongo.Collection('campitems');
 var date = new Date();
 var currentDate = moment(date).format("dddd, MMMM D YYYY - hh:mm a");
 
+Template.registerHelper('formatDate', function(date) {
+  return moment(date).format('MMMM D, YYYY - hh:mm a');
+});
+
 Template.dashboard.helpers({
   username: "John Doe",
   currentdate: currentDate,
@@ -22,7 +26,7 @@ Template.dashboard.helpers({
 
 Template.itemgrid.helpers({
   campitems: function() {
-    var items = CampItems.find({campid: FlowRouter.getParam('campid')});
+    var items = CampItems.find({campid: FlowRouter.getParam('campid')}, {sort: {date: 1}});
     return items;
   }
 });
