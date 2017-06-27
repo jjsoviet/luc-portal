@@ -10,7 +10,8 @@ var date = new Date();
 var currentDate = moment(date).format("dddd, MMMM D YYYY - hh:mm a");
 var sortOrder = {};
 sortOrder["date"] = -1;
-
+var categoryTerm = "Tutorial";
+var ratingTerm = "Beginner";
 
 Template.registerHelper('formatDate', function(date) {
   return moment(date).format('MMMM D, YYYY - hh:mm a');
@@ -18,30 +19,6 @@ Template.registerHelper('formatDate', function(date) {
 
 Template.registerHelper('formatShortDate', function(date) {
   return moment(date).format('MMMM D, YYYY');
-});
-
-Template.registerHelper("formatRating", function(rating){
-  if (rating == 1) {
-    return "Beginner";
-  } else if (rating == 2) {
-    return "Intermediate";
-  } else if (rating == 3) {
-    return "Advanced";
-  }
-
-  return "Unknown";
-});
-
-Template.registerHelper("formatCategory", function(category){
-  if (category == 1) {
-    return "Tutorial";
-  } else if (category == 2) {
-    return "Video";
-  } else if (category == 3) {
-    return "Article";
-  }
-
-  return "Unknown";
 });
 
 Template.dashboard.helpers({
@@ -72,8 +49,11 @@ Template.detail.helpers({
 
 Template.search.helpers({
   searchitems: function() {
-    var searchTerm = new RegExp(Session.get('search/keyword'), 'i');
-    var items = CampItems.find({title: searchTerm}, {sort: sortOrder});
+    var searchRegex = new RegExp(Session.get('search/keyword'), 'i');
+    var categoryRegex = new RegExp(Session.get('search/category'), 'i');
+    var ratingRegex = new RegExp(Session.get('search/rating'), 'i');
+
+    var items = CampItems.find({title: searchRegex, rating: ratingRegex, category: categoryRegex} , {sort: sortOrder});
     return items;
   }
 })
@@ -81,11 +61,11 @@ Template.search.helpers({
 
 Template.searchbar.helpers({
   categories: function() {
-    return [1,2,3];
+    return ["Tutorial", "Video", "Article"];
   },
 
   ratings: function() {
-    return [1,2,3];
+    return ["Beginner", "Intermediate", "Advanced"];
   }
 })
 
@@ -93,16 +73,17 @@ Template.searchbar.events({
   'submit form': function(event) {
     event.preventDefault();
     var searchTerm = event.target.titlesearch.value;
+
     Session.set('search/keyword', searchTerm);
+    Session.set('search/category', categoryTerm);
+    Session.set('search/rating', ratingTerm);
   },
 
-  "change #filter-select": function (event, template) {
-    var filter = $(event.currentTarget).val();
-    console.log(filter);
+  "change #category-select": function (event, template) {
+    categoryTerm = $(event.currentTarget).val();
   },
 
   "change #rating-select": function (event, template) {
-    var rating = $(event.currentTarget).val();
-    console.log(rating);
+    ratingTerm = $(event.currentTarget).val();
   }
 });

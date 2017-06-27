@@ -9,10 +9,10 @@
       </div>
       <div class="searchbar-item">
         <span>Category:</span>
-        <select class="form-control" id="filter-select">
+        <select class="form-control" id="category-select">
           {{#each categories}}
             <option value="{{this}}">
-              {{formatCategory this}}
+              {{this}}
             </option>
           {{/each}}
         </select>
@@ -22,7 +22,7 @@
         <select class="form-control" id="rating-select">
           {{#each ratings}}
             <option value="{{this}}">
-              {{formatRating this}}
+              {{this}}
             </option>
           {{/each}}
         </select>
