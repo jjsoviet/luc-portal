@@ -1,0 +1,33 @@
+<template name="searchbar">
+  <div class="searchbar-container">
+    <form>
+      <div class="searchbar-item">
+        <span>Title:</span>
+        <div class="mdl-textfield mdl-js-textfield search-field">
+          <input class="mdl-textfield__input" type="text" name="titlesearch">
+        </div>
+      </div>
+      <div class="searchbar-item">
+        <span>Category:</span>
+        <select class="form-control" id="filter-select">
+          {{#each categories}}
+            <option value="{{this}}">
+              {{formatCategory this}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="searchbar-item">
+        <span>Rating:</span>
+        <select class="form-control" id="rating-select">
+          {{#each ratings}}
+            <option value="{{this}}">
+              {{formatRating this}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+      <input type="submit" class="panel-button" id="searchbutton" value="Search">
+    </form>
+  </div>
+</template>

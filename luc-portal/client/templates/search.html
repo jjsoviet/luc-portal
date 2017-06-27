@@ -1,10 +1,11 @@
-<template name="itemgrid">
-  <div class="grid-container">
+<template name="search">
+  <div class="search-container">
     <div class="grid-header">
-      <h1>Camp Resources</h1>
+      <h1>Search</h1>
     </div>
+    {{> searchbar}}
     <div class="mdl-grid mdl-grid--no-spacing resource-grid">
-      {{#each campitems}}
+      {{#each searchitems}}
         <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
           <div class="grid-item fade-cell" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
             <div class="item-panel">

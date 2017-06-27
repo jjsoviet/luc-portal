@@ -46,3 +46,13 @@ FlowRouter.route( '/detail/:itemid', {
   },
   name: 'detail'
 });
+
+
+FlowRouter.route( '/search', {
+  action: function() {
+    BlazeLayout.render('applicationLayout', {
+      main: 'search'
+    })
+  },
+  name: 'search'
+});

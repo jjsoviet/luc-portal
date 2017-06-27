@@ -108,13 +108,17 @@ html, body {
   background: linear-gradient(60deg, rgba(33,17,92, 1), rgb(129, 2, 138));
 }
 
-.login-field .mdl-textfield__input, .login-field .mdl-textfield__label, .login-box h1 {
+.login-field .mdl-textfield__input, .login-field .mdl-textfield__label, .login-box h1, .search-field .mdl-textfield__input, .search-field .mdl-textfield__label {
   color: rgb(255,255,255);
 }
 
-.login-field .mdl-textfield__input:focus {
+.login-field .mdl-textfield__input:focus, .search-field .mdl-textfield__input:focus {
   border-bottom-color: rgb(255,255,255);
   box-shadow: 0 1px 0 0 rgb(255,255,255);
+}
+
+.search-field .mdl-textfield__input, .search-field .mdl-textfield__label {
+  font-size: 1.6em;
 }
 
 .login-box h1 {
@@ -291,7 +295,7 @@ html, body {
   color: rgb(255, 255, 255);
 }
 
-.grid-container {
+.grid-container, .search-container {
   margin: 0 50px;
   z-index: 2 !important;
 }
@@ -404,13 +408,15 @@ html, body {
 }
 
 .panel-button {
-  background: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0);
   font-weight: 400;
-  color: rgb(255,255,255);
+  color: rgba(255,255,255, 1);
   border: 2px solid rgb(255,255,255);
   border-radius: 16px;
   padding: 8px 12px;
   font-weight: 300;
+  transition: background-color 400ms ease;
+  -webkit-transition: background-color 400ms ease;
 }
 
 .login-button {
@@ -420,13 +426,24 @@ html, body {
 
 .panel-button a {
   text-decoration: none;
-  color: rgb(255,255,255);
+  color: rgba(255,255,255, 1);
   font-weight: 300 !important;
+  transition: color 400ms ease;
+  -webkit-transition: color 400ms ease;
 }
 
 .login-button a {
   font-size: 1.5em;
   font-weight: 200 !important;
+}
+
+.panel-button:hover, .login-button:hover {
+  background: rgb(255,255,255);
+  cursor: pointer;
+}
+
+.panel-button:hover > a {
+  color: rgba(0,0,0,0) !important;
 }
 
 .dash-header h1, .dash-header h3 {
@@ -706,6 +723,38 @@ html, body {
 .login-logo img {
   width: 200px;
   height: auto;
+}
+
+.searchbar-container form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin: 40px 0;
+}
+
+.searchbar-container span, .searchbar-container select {
+  margin: 0 20px;
+}
+
+.searchbar-container span {
+  color: rgb(255,255,255);
+  font-size: 2em;
+}
+
+.form-control {
+  background: rgba(0,0,0,0);
+  color: rgb(255,255,255);
+  border: 0px;
+  font-size: 2em;
+  font-weight: 200 !important;
+}
+
+.form-control option {
+  color: rgb(0,0,0);
+  font-size: 0.8em;
+  font-weight: 200 !important;
+  text-transform: capitalize;
 }
 
 
