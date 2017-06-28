@@ -1,29 +1,35 @@
+FlowRouter.route( '/', {
+  action: function() {
+    if (!Meteor.user() && !Meteor.loggingIn()) {
+      FlowRouter.go('login');
+    } else if (Meteor.user() || Meteor.loggingIn()) {
+      FlowRouter.go('dashboard');
+    }
+  }
+});
+
 FlowRouter.route( '/login', {
   action: function() {
-    console.log( "Login" );
-    BlazeLayout.render('applicationLayout', {
-      main: 'login'
-    })
+    if (!Meteor.user() && !Meteor.loggingIn()) {
+      BlazeLayout.render('applicationLayout', {
+        main: 'login'
+      })
+    } else if (Meteor.user() || Meteor.loggingIn()) {
+      FlowRouter.go('dashboard');
+    }
   },
   name: 'login'
 });
 
-FlowRouter.route( '/register', {
-  action: function() {
-    console.log( "Register" );
-    BlazeLayout.render('applicationLayout', {
-      main: 'register'
-    })
-  },
-  name: 'register'
-});
-
 FlowRouter.route( '/dashboard', {
   action: function() {
-    console.log( "Dashboard" );
-    BlazeLayout.render('applicationLayout', {
-      main: 'dashboard'
-    })
+    if (!Meteor.user() && !Meteor.loggingIn()) {
+      FlowRouter.go('login');
+    } else if (Meteor.user() || Meteor.loggingIn()) {
+      BlazeLayout.render('applicationLayout', {
+        main: 'dashboard'
+      })
+    }
   },
   name: 'dashboard'
 });

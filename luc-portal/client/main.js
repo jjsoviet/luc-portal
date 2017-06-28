@@ -16,7 +16,6 @@ var categoryTerm = "Tutorial";
 var ratingTerm = "Beginner";
 
 const Schemas = {};
-var currentUser = Meteor.user();
 
 Schemas.CampItem = new SimpleSchema({
   title: {
@@ -72,7 +71,11 @@ Template.registerHelper('formatShortDate', function(date) {
 });
 
 Template.dashboard.helpers({
-  username: (typeof currentUser != 'undefined') ? currentUser.emails[0].address : "Undefined",
+  username: function() {
+    if (Meteor.user()) {
+      return Meteor.user().emails[0].address;
+    }
+  },
   currentdate: currentDate,
   camps: function() {
     return Camps.find();
