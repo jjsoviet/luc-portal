@@ -2,6 +2,8 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
+import SimpleSchema from 'simpl-schema';
+SimpleSchema.extendOptions(['autoform']);
 
 Camps = new Mongo.Collection('camps');
 Articles = new Mongo.Collection('articles');
@@ -38,26 +40,6 @@ Schemas.CampItem = new SimpleSchema({
     type: String,
     label: "Difficulty Rating"
   }
-  // author: {
-  //   type: String,
-  //   label: "Author",
-  //   autoValue: function() {
-  //     return this.userId();
-  //   },
-  //   autoform: {
-  //     type: "hidden"
-  //   }
-  // },
-  // date: {
-  //   type: Date,
-  //   label: "Date Created",
-  //   autoValue: function() {
-  //     return new Date();
-  //   },
-  //   autoform: {
-  //     type: "hidden"
-  //   }
-  // }
 });
 
 CampItems.attachSchema(Schemas.CampItem);
