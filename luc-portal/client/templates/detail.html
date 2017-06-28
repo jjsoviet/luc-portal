@@ -1,23 +1,23 @@
 <template name="detail">
   {{#each campdetail}}
-    <div class="detail-header" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(0,0,0,0.6));">
-      <div class="detail-titles">
-        <h1>{{title}}</h1>
-        <div class="detail-info">
-          <span>{{category}}</span>
-          <span>{{rating}}</span>
-          <span>{{formatDate date}}</span>
+    <div class="detail-container">
+      <div class="detail-header" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(0,0,0,0.6));">
+        <div class="detail-titles">
+          <h1>{{title}}</h1>
+          <div class="detail-info">
+            <span>{{category}}</span>
+            <span>{{rating}}</span>
+            <span>{{formatDate date}}</span>
+          </div>
+        </div>
+        <div class="detail-tags">
+          {{#each tags}}
+            <span class="mdl-chip">
+              <span class="mdl-chip__text">{{tag}}</span>
+            </span>
+          {{/each}}
         </div>
       </div>
-      <div class="detail-tags">
-        {{#each tags}}
-          <span class="mdl-chip">
-            <span class="mdl-chip__text">{{tag}}</span>
-          </span>
-        {{/each}}
-      </div>
-    </div>
-    <div class="detail-container">
       <div class="detail-desc">
         <h1>Description</h1>
         <h4>{{desc}}</h4>

@@ -6,12 +6,62 @@ import './main.html';
 Camps = new Mongo.Collection('camps');
 Articles = new Mongo.Collection('articles');
 CampItems = new Mongo.Collection('campitems');
+
 var date = new Date();
 var currentDate = moment(date).format("dddd, MMMM D YYYY - hh:mm a");
+
 var sortOrder = {};
 sortOrder["date"] = -1;
 var categoryTerm = "Tutorial";
 var ratingTerm = "Beginner";
+
+const Schemas = {};
+var currentUser = Meteor.user();
+
+Schemas.CampItem = new SimpleSchema({
+  title: {
+    type: String,
+    label: "Title"
+  },
+  shortdesc: {
+    type: String,
+    label: "Short Description"
+  },
+  desc: {
+    type: String,
+    label: "Full Description"
+  },
+  category: {
+    type: String,
+    label: "Category"
+  },
+  rating: {
+    type: String,
+    label: "Difficulty Rating"
+  }
+  // author: {
+  //   type: String,
+  //   label: "Author",
+  //   autoValue: function() {
+  //     return this.userId();
+  //   },
+  //   autoform: {
+  //     type: "hidden"
+  //   }
+  // },
+  // date: {
+  //   type: Date,
+  //   label: "Date Created",
+  //   autoValue: function() {
+  //     return new Date();
+  //   },
+  //   autoform: {
+  //     type: "hidden"
+  //   }
+  // }
+});
+
+CampItems.attachSchema(Schemas.CampItem);
 
 Template.registerHelper('formatDate', function(date) {
   return moment(date).format('MMMM D, YYYY - hh:mm a');
@@ -22,7 +72,7 @@ Template.registerHelper('formatShortDate', function(date) {
 });
 
 Template.dashboard.helpers({
-  username: "John Doe",
+  username: (typeof currentUser != 'undefined') ? currentUser.emails[0].address : "Undefined",
   currentdate: currentDate,
   camps: function() {
     return Camps.find();

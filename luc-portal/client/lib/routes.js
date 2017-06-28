@@ -56,3 +56,12 @@ FlowRouter.route( '/search', {
   },
   name: 'search'
 });
+
+FlowRouter.route( '/additem', {
+  action: function() {
+    BlazeLayout.render('applicationLayout', {
+      main: 'additem'
+    })
+  },
+  name: 'additem'
+});
