@@ -5,7 +5,7 @@ html, body {
 }
 
 .mdl-layout__content.portal-content {
-    background: linear-gradient(60deg, rgba(37,3,63, 1), rgba(33,17,92, 1)) !important;
+  background: linear-gradient(60deg, rgb(37,3,63), rgba(33,17,92, 1)) !important;
     overflow: auto;
 }
 
@@ -32,8 +32,11 @@ html, body {
   border-style: solid;
 }
 
+.portal-header {
+  background: linear-gradient(60deg, rgb(37,3,63), rgba(33,17,92, 1)) !important;
+}
+
 .portal-header header {
-  background: rgb(40,40,40);
   height: 60px !important;
 }
 
@@ -47,6 +50,7 @@ html, body {
 .portal-header header img.header-img {
   height: 50px;
   width: auto;
+  margin-left: -30px;
 }
 
 .header-title {
@@ -56,6 +60,7 @@ html, body {
 }
 
 .header-links a {
+  font-size: 1.4em;
   font-weight: 200 !important;
 }
 
@@ -105,7 +110,24 @@ html, body {
   border-radius: 16px;
   margin: 20px;
   padding: 20px;
-  background: linear-gradient(60deg, rgba(33,17,92, 1), rgb(129, 2, 138));
+  animation: colorshift 5s ease infinite;
+  background: linear-gradient(60deg, rgb(33,17,92), rgb(129, 2, 138));
+  background-size: 150% 150%;
+}
+
+@keyframes colorshift {
+  0%, 100% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+}
+
+@-webkit-keyframes colorshift {
+  0%, 100% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+}
+
+@keyframes headershift {
+  0%, 100% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
 }
 
 .login-field .mdl-textfield__input, .login-field .mdl-textfield__label, .login-box h1, .search-field .mdl-textfield__input, .search-field .mdl-textfield__label {
@@ -300,6 +322,13 @@ html, body {
   z-index: 2 !important;
 }
 
+.grid-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .grid-header h1 {
   font-weight: 200;
   color: rgb(255,255,255);
@@ -409,14 +438,23 @@ html, body {
 
 .panel-button {
   background-color: rgba(0,0,0,0);
-  font-weight: 400;
   color: rgba(255,255,255, 1);
   border: 2px solid rgb(255,255,255);
-  border-radius: 16px;
-  padding: 8px 12px;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-family: 'Heebo', sans-serif !important;
+  font-size: 1.2em;
   font-weight: 300;
   transition: background-color 400ms ease;
   -webkit-transition: background-color 400ms ease;
+}
+
+.panel-button.search-button {
+  font-size: 1.8em;
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-family: 'Heebo', sans-serif !important;
+  font-weight: 300 !important;
 }
 
 .login-button {
@@ -442,8 +480,8 @@ html, body {
   cursor: pointer;
 }
 
-.panel-button:hover > a {
-  color: rgba(0,0,0,0) !important;
+.panel-button:hover > a, .panel-button:hover {
+  color: rgb(0,0,0) !important;
 }
 
 .dash-header h1, .dash-header h3 {
@@ -465,19 +503,24 @@ html, body {
   margin: 0 50px;
   z-index: 2 !important;
 }
+
 .dash-camp, .dash-article {
-  background-size: 100%;
+  overflow: hidden;
+}
+
+.dash-camp .inner-img, .dash-article .inner-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
-  width: 100%;
-  height: 100%;
-  transition:  background-size 300ms ease-in-out;
-  -webkit-transition:  background-size 300ms ease-in-out;
+  transition:  transform 300ms ease-in-out;
+  -webkit-transition:  transform 300ms ease-in-out;
 }
 
-.dash-camp:hover, .dash-article:hover {
-  background-size: 105%;
+.inner-img:hover {
+  transform: scale(1.1);
 }
 .dash-camp:hover .camp-panel, .dash-article:hover .article-panel {
   background-color: rgba(20,20,20,0.75);
@@ -526,6 +569,7 @@ html, body {
 }
 
 .camp-panel, .article-panel {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -535,20 +579,19 @@ html, body {
   max-width: 100%;
   color: rgb(255,255,255);
   background-color: rgba(0,0,0,0.75);
-  position: relative;
   transition: background-color 300ms ease-in-out;
   -webkit-transition: background-color 300ms ease-in-out;
 }
 
 
 .camp-panel {
-  top: 125px;
+  top: -125px;
   height: 125px;
   max-height: 125px;
 }
 
 .article-panel {
-  top: 175px;
+  top: -175px;
   height: 175px;
   max-height: 175px;
 }
@@ -629,10 +672,13 @@ html, body {
 .detail-header {
   height: auto;
   background-position: center;
-  background-size: cover;
+  background-size: 150% auto;
+  background-repeat: no-repeat;
   background-blend-mode: darken;
   padding: 40px;
   color: rgb(255,255,255);
+  animation: headershift 20s ease infinite;
+  -webkit-animation: headershift 20s ease infinite;
 }
 
 .detail-titles {
@@ -730,7 +776,7 @@ html, body {
   flex-direction: row;
   justify-content: flex-end;
   align-items: baseline;
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .searchbar-container span, .searchbar-container select {
@@ -740,19 +786,23 @@ html, body {
 .searchbar-container span {
   color: rgb(255,255,255);
   font-size: 2em;
+  font-weight: 300;
 }
 
-.form-control {
+.form-control, select {
   background: rgba(0,0,0,0);
   color: rgb(255,255,255);
   border: 0px;
   font-size: 2em;
+  font-family: 'Heebo', sans-serif !important;
   font-weight: 200 !important;
 }
 
-.form-control option {
-  color: rgb(0,0,0);
+.form-control option, option {
+  background: rgb(33,17,92);
+  color: rgb(255,255,255);
   font-size: 0.8em;
+  font-family: 'Heebo', sans-serif !important;
   font-weight: 200 !important;
   text-transform: capitalize;
 }

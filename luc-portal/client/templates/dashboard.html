@@ -11,7 +11,9 @@
         <div class="mdl-grid mdl-grid--no-spacing">
           {{#each camps}}
             <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-mobile">
-              <div class="dash-camp fade-cell" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
+              <div class="dash-camp fade-cell">
+                <div class="inner-img" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
+                </div>
                 <div class="camp-panel">
                   <div class="panel-header-desc">
                     <h4 class="camp-title">{{title}}</h4>
@@ -36,7 +38,9 @@
         <div class="mdl-grid mdl-grid--no-spacing update-grid">
           {{#each articles}}
             <div class="mdl-cell mdl-cell--12-col">
-              <div class="dash-article fade-cell" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
+              <div class="dash-article fade-cell">
+                <div class="inner-img" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
+                </div>
                 <div class="article-panel">
                   <div class="panel-header-desc">
                     <h4 class="article-title">{{title}}</h4>
