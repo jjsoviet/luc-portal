@@ -863,22 +863,85 @@ html, body {
   text-transform: capitalize;
 }
 
+.contributor-container {
+  margin: 0 50px;
+  color: rgb(255,255,255) !important;
+}
 
-.update-grid::-webkit-scrollbar, .mdl-layout__content.portal-content::-webkit-scrollbar,
-.resource-grid::-webkit-scrollbar,
-.detail-container::-webkit-scrollbar {
+.contributor-header h1, .contributor-header h3, .contributor-grid h2 {
+  font-weight: 200 !important;
+}
+
+
+.contributor-grid {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.contributor-grid button {
+  background: rgba(0,0,0,0);
+  border: 2px solid rgb(255,255,255);
+  border-radius: 30px;
+  color: rgb(255,255,255);
+  font-family: 'Heebo', sans-serif !important;
+  padding: 8px 30px;
+  font-size: 1.6em;
+  font-weight: 200;
+  margin: 20px 0;
+}
+
+.contributor-grid .new-item-form .form-group {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contributor-grid .new-item-form .form-group .help-block {
+  display: none;
+}
+
+.contributor-grid .new-item-form .form-group label {
+  margin-right: 30px;
+  font-size: 2.2em;
+  font-weight: 200;
+  line-height: 1.4em;
+}
+
+.contributor-grid .new-item-form .form-group input, .contributor-grid .new-item-form .form-group textarea {
+  width: 400px;
+  border-bottom: 1px solid;
+}
+
+.contributor-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contributor-item h3 {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.contributor-item span {
+  font-size: 1.4em;
+  font-weight: 200;
+}
+
+
+::-webkit-scrollbar {
     width: 5px;
 }
 
-.update-grid::-webkit-scrollbar-track, .mdl-layout__content.portal-content::-webkit-scrollbar-track,
-.resource-grid::-webkit-scrollbar-track,
-.detail-container::-webkit-scrollbar-track {
+::-webkit-scrollbar-track{
     -webkit-box-shadow: none;
 }
 
-.update-grid::-webkit-scrollbar-thumb, .mdl-layout__content.portal-content::-webkit-scrollbar-thumb,
-.resource-grid::-webkit-scrollbar-thumb,
-.detail-container::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: rgb(255,255,255);
   border: 1px solid rgb(10,2,38);
 }

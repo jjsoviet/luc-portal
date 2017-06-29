@@ -1,0 +1,31 @@
+<template name="contributor">
+  <div class="contributor-container">
+    <div class="contributor-header">
+      <h1>Contributor Dashboard</h1>
+      <h3>Welcome, {{user}}</h3>
+    </div>
+    <div class="contributor-grid">
+      <h2>Manage Content</h2>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell-6--col-desktop mdl-cell-4--col-tablet mdl-cell-4-col-phone">
+          <div class="contributor-item fade-cell">
+            <h3>Add Curriculum Content</h3>
+            <span>Start making new lessons for students.</span><br />
+            <button class="panel-button article-button">
+              <a href="/contributor/additem">Start</a>
+            </button>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell-6--col-desktop mdl-cell-4--col-tablet mdl-cell-4-col-phone">
+          <div class="contributor-item fade-cell">
+            <h3>Modify Curriculum Content</h3>
+            <span>Edit or delete existing content.</span><br />
+            <button class="panel-button article-button">
+              <a href="/contributor/edititem">Start</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

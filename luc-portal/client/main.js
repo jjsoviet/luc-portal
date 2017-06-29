@@ -22,23 +22,23 @@ const Schemas = {};
 Schemas.CampItem = new SimpleSchema({
   title: {
     type: String,
-    label: "Title"
+    label: "Title:"
   },
   shortdesc: {
     type: String,
-    label: "Short Description"
+    label: "Short Description:"
   },
   desc: {
     type: String,
-    label: "Full Description"
+    label: "Full Description:"
   },
   category: {
     type: String,
-    label: "Category"
+    label: "Category:"
   },
   rating: {
     type: String,
-    label: "Difficulty Rating"
+    label: "Difficulty Rating:"
   }
 });
 
@@ -122,3 +122,11 @@ Template.searchbar.events({
     ratingTerm = $(event.currentTarget).val();
   }
 });
+
+Template.contributor.helpers({
+  user: function() {
+    if (Meteor.user()) {
+      return Meteor.user().emails[0].address;
+    }
+  },
+})

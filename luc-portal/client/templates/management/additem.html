@@ -1,0 +1,26 @@
+<template name="additem">
+  <div class="contributor-container">
+    <div class="contributor-header">
+      <h1>Add Curriculum Item</h1>
+    </div>
+    <div class="contributor-grid">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          {{#autoForm collection="CampItems" id="insertCampItemForm" type="insert" class="new-item-form"}}
+            <fieldset>
+              {{> afQuickField name = 'title'}}
+              {{> afQuickField name = 'shortdesc'}}
+              {{> afQuickField name = 'desc' rows=5}}
+              {{> afQuickField name = 'category'}}
+              {{> afQuickField name = 'rating'}}
+            </fieldset>
+          {{/autoForm}}
+          <button type="submit" class="btn btn-primary">Add Item</button>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

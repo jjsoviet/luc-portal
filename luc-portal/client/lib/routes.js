@@ -63,7 +63,17 @@ FlowRouter.route( '/search', {
   name: 'search'
 });
 
-FlowRouter.route( '/additem', {
+FlowRouter.route( '/contributor', {
+  action: function() {
+    BlazeLayout.render('applicationLayout', {
+      main: 'contributor'
+    })
+  },
+  name: 'contributor'
+});
+
+
+FlowRouter.route( '/contributor/additem', {
   action: function() {
     BlazeLayout.render('applicationLayout', {
       main: 'additem'
