@@ -52,6 +52,22 @@ Template.registerHelper('formatShortDate', function(date) {
   return moment(date).format('MMMM D, YYYY');
 });
 
+Template.registerHelper('categoryOptions', function() {
+  return [
+    {label: 'Tutorial', value: 'Tutorial'},
+    {label: 'Video', value: 'Video'},
+    {label: 'Article', value: 'Article'}
+  ]
+});
+
+Template.registerHelper('ratingOptions', function() {
+  return [
+    {label: 'Beginner', value: 'Beginner'},
+    {label: 'Intermediate', value: 'Intermediate'},
+    {label: 'Advanced', value: 'Advanced'}
+  ]
+});
+
 Template.dashboard.helpers({
   username: function() {
     if (Meteor.user()) {

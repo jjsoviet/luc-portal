@@ -890,6 +890,20 @@ html, body {
   margin: 20px 0;
 }
 
+.contributor-grid .new-item-form fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contributor-grid .new-item-form fieldset .fieldset-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .contributor-grid .new-item-form .form-group {
   margin: 20px 0;
   display: flex;
@@ -902,7 +916,7 @@ html, body {
   display: none;
 }
 
-.contributor-grid .new-item-form .form-group label {
+.contributor-grid .new-item-form label {
   margin-right: 30px;
   font-size: 2.2em;
   font-weight: 200;
