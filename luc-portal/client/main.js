@@ -40,7 +40,35 @@ Schemas.CampItem = new SimpleSchema({
     type: String,
     label: "Difficulty Rating:"
   }
+  // actions: {
+  //   type: [Action],
+  //   optional: true,
+  //   blackbox: true
+  // },
+  // requirements: {
+  //   type: [Requirement],
+  //   optional: true,
+  //   blackbox: true
+  // }
 });
+
+Action = new SimpleSchema({
+  action: {
+    type: String,
+    label: "Action"
+  }
+})
+
+Requirement = new SimpleSchema({
+  reqtitle: {
+    type: String,
+    label: "Title"
+  },
+  reqdesc: {
+    type: String,
+    label: "Description"
+  }
+})
 
 CampItems.attachSchema(Schemas.CampItem);
 

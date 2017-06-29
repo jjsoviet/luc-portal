@@ -12,18 +12,23 @@
           {{#each camps}}
             <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-mobile">
               <div class="dash-camp fade-cell">
-                <div class="inner-img" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
-                </div>
+                <!-- <div class="inner-img" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
+                </div> -->
                 <div class="camp-panel">
-                  <div class="panel-header-desc">
-                    <h4 class="camp-title">{{title}}</h4>
-                    <span class="camp-status">{{campstatus}}</span>
+                  <div class="panel-icon">
+                    <img src="{{img}}" />
                   </div>
-                  <div class="panel-desc">
-                    <span class="camp-desc">{{campdesc}}</span>
-                    <button class="panel-button">
-                      <a href="/camp/{{campid}}">Go to Camp</a>
-                    </button>
+                  <div class="panel-data">
+                    <div class="panel-header-desc">
+                      <h4 class="camp-title">{{title}}</h4>
+                      <span class="camp-status">{{campstatus}}</span>
+                    </div>
+                    <div class="panel-desc">
+                      <span class="camp-desc">{{campdesc}}</span>
+                      <button class="panel-button">
+                        <a href="/camp/{{campid}}">Enter</a>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -39,22 +44,27 @@
           {{#each articles}}
             <div class="mdl-cell mdl-cell--12-col">
               <div class="dash-article fade-cell">
-                <div class="inner-img" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
-                </div>
+                <!-- <div class="inner-img" style="background-image: url('{{img}}'), linear-gradient(60deg, rgba(37,3,63,0.6), rgba(255,255,255,0.6));">
+                </div> -->
                 <div class="article-panel">
-                  <div class="panel-header-desc">
-                    <h4 class="article-title">{{title}}</h4>
-                    <div class="panel-header-info">
-                      <span class="article-author">{{author}}</span>
-                      <span class="article-date"> {{date}}</span>
+                  <div class="panel-icon">
+                    <img src="{{img}}" />
+                  </div>
+                  <div class="panel-data">
+                    <div class="panel-header-desc">
+                      <h4 class="article-title">{{title}}</h4>
+                      <div class="panel-header-info">
+                        <span class="article-author">{{author}}</span>
+                        <span class="article-date"> {{date}}</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="panel-desc">
-                    <span class="article-desc">{{articledesc}}</span>
-                    <button class="panel-button">
-                      <a href="{{source}}">More Info</a>
-                    </button>
-                  </div>
+                    <div class="panel-desc">
+                      <span class="article-desc">{{articledesc}}</span>
+                      <button class="panel-button">
+                        <a href="{{source}}">More Info</a>
+                      </button>
+                    </div>
+                  </div>              
                 </div>
               </div>
             </div>
